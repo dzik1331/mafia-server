@@ -26,9 +26,9 @@
 
 [Usuwanie produktu](#usuwanie-produktu)
 
-## **Dłużnicy*
+## **Dłużnicy**
 
-`/api/user/all [Get]`
+`/api/debtors/list [Get]`
 
 
 Odpowiedź:
@@ -36,41 +36,35 @@ Odpowiedź:
 ##### Status: 200
     [
         {
-            "id": 5
-            "lastName": "Nieradzik"
-            "login": "krzynie1331"
-            "name": "Krzysztof"
-            "role": 2
-            "roleName": "użytkownik"
+            "name": "Leanne",
+            "lastname": "Graham",
+            "age": 28,
+            "debt": 20000,
+            "location": null
         },
         ...
     ]
 ##### Status: 404
 *******************************
 
-## **Logowanie**
+## **Dłużnik**
 
-`/api/user/login [POST]`
-
-Wysyłamy: 
-
+`/api/debtors/get/:id [GET]`
     
 Odpowiedź:
 
 ##### Status: 200
     {
-        id: 1,
-        login: 'Login', 
-        name: 'Imię', 
-        lastName: 'Nazwisko', 
-        role: 1,
-        userSession: "sha1$a43f2aa2$1$9199c53aec821ff9249424ad49bb09190b138ad81543956615564"
+        "name": "Leanne",
+        "lastname": "Graham",
+        "age": 28,
+        "debt": 20000,
+        "location": null
     }
-    userSession należy potem wysyłać w każdym requeście w headerze user-session
 
 ##### Status 404
 
-`NO_FOUND lub BAD_PASSWORD`
+`NO_FOUND`
 ********************************
 
 ## **Role użytkownika**
