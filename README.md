@@ -2,7 +2,7 @@
 ********************************
 [Dłużnicy](#dłużnicy)
 
-[Logowanie](#logowanie)
+[Dłużnik](#dłużnik)
 
 [Role użytkownika](#role-użytkownika)
 
