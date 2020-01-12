@@ -1,5 +1,7 @@
 **http://localhost:8443**
 ********************************
+[Dłużnicy](#dłużnicy)
+
 [Logowanie](#logowanie)
 
 [Role użytkownika](#role-użytkownika)
@@ -23,6 +25,28 @@
 [Edycja produktu](#edycja-produktu)
 
 [Usuwanie produktu](#usuwanie-produktu)
+
+## **Dłużnicy*
+
+`/api/user/all [Get]`
+
+
+Odpowiedź:
+
+##### Status: 200
+    [
+        {
+            "id": 5
+            "lastName": "Nieradzik"
+            "login": "krzynie1331"
+            "name": "Krzysztof"
+            "role": 2
+            "roleName": "użytkownik"
+        },
+        ...
+    ]
+##### Status: 404
+*******************************
 
 ## **Logowanie**
 
