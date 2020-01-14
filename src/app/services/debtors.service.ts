@@ -19,7 +19,6 @@ export class DebtorsService extends MainService {
 
         let sql = "SELECT name, lastname, age, debt, location FROM debtors;";
 
-        console.debug(sql);
         return new Observable((observer) => {
             this.checkSession(request).subscribe((result) => {
                 if (result) {

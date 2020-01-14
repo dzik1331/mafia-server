@@ -21,7 +21,6 @@ export class UserController extends ApiController {
     @HttpGet('/all')
     users() {
         this.userService.getAll(this.request).subscribe((result) => {
-                console.debug('Result', result);
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
@@ -37,7 +36,6 @@ export class UserController extends ApiController {
     @HttpGet('/get-user/:id')
     user(id) {
         this.userService.getUser(this.request, id).subscribe((result) => {
-                console.debug('Result', result);
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
@@ -52,7 +50,6 @@ export class UserController extends ApiController {
     @SendsResponse()
     @HttpPost('/login')
     login(body: any) {
-        console.log(body);
         this.userService.login(body).subscribe((result) => {
             this.userService.addSession(result).subscribe((data) => {
                 result['userSession'] = data;
@@ -78,7 +75,6 @@ export class UserController extends ApiController {
     @SendsResponse()
     @HttpPost('/add')
     add(body) {
-        console.log(body)
         this.userService.addUser(body).subscribe((result) => {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
@@ -90,7 +86,6 @@ export class UserController extends ApiController {
     @SendsResponse()
     @HttpPut('/edit')
     edit(body) {
-        console.log(body)
         this.userService.editUser(body).subscribe((result) => {
                 this.response.status(HttpStatusCode.oK).json(result)
             },

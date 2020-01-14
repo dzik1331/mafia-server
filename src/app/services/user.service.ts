@@ -14,7 +14,6 @@ export class UserService extends MainService {
             this.checkSession(request).subscribe((result) => {
                 if (result) {
                     database.all(sql, (err, data) => {
-                        console.debug('errrrr', err);
                         if (err != null)
                             observer.next(null);
                         else
@@ -34,7 +33,6 @@ export class UserService extends MainService {
             this.checkSession(request).subscribe((result) => {
                 if (result) {
                     database.get(sql, (err, data) => {
-                        console.debug('errrrr', err);
                         if (err != null)
                             observer.next(null);
                         else
@@ -50,7 +48,7 @@ export class UserService extends MainService {
 
     login(userData) {
         return new Observable((observer) => {
-            database.get(`Select id, login, name, lastName, role, password From users WHERE login = '${userData.login}'`, (err, data) => {
+            database.get(`Select id, login, name, lastName, role, password From users WHERE login = '${userData.login}';`, (err, data) => {
                 if (err != null)
                     observer.error('NO_FOUND');
                 else {

@@ -23,7 +23,6 @@ export class DebtorsController extends ApiController {
     @HttpGet('/list')
     products() {
         this.debtorsService.getAll(this.request).subscribe((result) => {
-                console.debug('Result', result);
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
@@ -39,7 +38,6 @@ export class DebtorsController extends ApiController {
     @HttpGet('/get/:id')
     product(userId, id) {
         this.debtorsService.get(this.request, id).subscribe((result) => {
-                console.debug('Result', result);
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
@@ -97,7 +95,6 @@ export class DebtorsController extends ApiController {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
-                console.debug('errr', error);
                 if (error == 666) {
                     this.response.status(HttpStatusCode.forbidden).json('Brak sessji');
                 } else {
