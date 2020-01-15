@@ -4,11 +4,11 @@ import {Observable} from "rxjs";
 import {MainService} from "./mainService";
 
 @Injectable()
-export class DebtorsService extends MainService {
+export class KillersService extends MainService {
 
     getAll(request) {
 
-        let sql = "SELECT id, name, lastname, age, debt, location FROM debtors;";
+        let sql = "SELECT id, pseudonym, location, salary FROM killers;";
 
         return new Observable((observer) => {
             this.checkSession(request).subscribe((result) => {

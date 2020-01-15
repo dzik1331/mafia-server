@@ -4,16 +4,24 @@ import {UserController} from "./controllers/userController";
 import {UserService} from "./services/user.service";
 import {DebtorsController} from "./controllers/debtorsController";
 import {DebtorsService} from "./services/debtors.service";
+import {KillersService} from "./services/killers.service";
+import {KillersController} from "./controllers/killersController";
+import {DashboardController} from "./controllers/dashboardController";
+import {DashboardsService} from "./services/dashboards.service";
 
 export const CONTROLLERS = [
     HomeController,
     UserController,
-    DebtorsController
+    DebtorsController,
+    KillersController,
+    DashboardController
 ];
 
 const SERVICES = [
     UserService,
-    DebtorsService
+    DebtorsService,
+    KillersService,
+    DashboardsService
 ];
 
 let getProviders = () => {
@@ -26,5 +34,4 @@ let getProviders = () => {
     return controllers.concat(services);
 };
 const injector = ReflectiveInjector.resolveAndCreate(getProviders());
-// { provide: HomeController, useClass: HomeController },
 export {injector as Container};

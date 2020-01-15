@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="537f8dbc-d9ae-428b-9315-a5b644ec7d1f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controllers/debtorsController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/debtorsController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controllers/userController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/userController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/container.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/container.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/services/debtors.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/debtors.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +35,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kursAngular" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/services" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -45,15 +47,16 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="P:\projekty\inventory_server" />
-      <recent name="P:\projekty\inventory_server\public" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\knieradz\Documents\Projekty\mafia\mafia-server\src\app\services" />
+      <recent name="C:\Users\knieradz\Documents\Projekty\mafia\mafia-server\src\app\controllers" />
       <recent name="P:\projekty\inventory_server" />
       <recent name="P:\projekty\inventory_server\src\app\services" />
       <recent name="P:\projekty\inventory_server\src\app\controllers" />
-      <recent name="P:\projekty\node_projekty\dinoloop\src\app\controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="P:\projekty\inventory_server" />
+      <recent name="P:\projekty\inventory_server\public" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -110,6 +113,7 @@
       <workItem from="1547236308492" duration="2897000" />
       <workItem from="1578843905875" duration="6982000" />
       <workItem from="1579030336879" duration="5045000" />
+      <workItem from="1579069173494" duration="10957000" />
     </task>
     <servers />
   </component>
@@ -120,9 +124,10 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="727" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578845889311">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="636" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579069193801">
+      <screen x="0" y="0" width="1680" height="1020" />
     </state>
+    <state x="636" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020/1680.0.1920.1050@0.0.1680.1020" timestamp="1579069193801" />
     <state x="727" y="329" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1578845889311" />
     <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1578846459166">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -144,9 +149,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1578850734384" />
-    <state x="656" y="257" width="607" height="536" key="find.popup" timestamp="1579039894058">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="574" y="250" width="627" height="568" key="find.popup" timestamp="1579096071299">
+      <screen x="0" y="0" width="1680" height="1020" />
     </state>
+    <state x="574" y="250" width="627" height="568" key="find.popup/0.0.1680.1020/1680.0.1920.1050@0.0.1680.1020" timestamp="1579096071299" />
     <state x="656" y="257" width="607" height="536" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1579039894058" />
   </component>
 </project>
