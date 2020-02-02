@@ -8,7 +8,6 @@ import {
     HttpStatusCode,
     SendsResponse
 } from 'dinoloop';
-import {DebtorsService} from "../services/debtors.service";
 import * as fs from "fs";
 import {KillersService} from "../services/killers.service";
 
@@ -69,20 +68,12 @@ export class KillersController extends ApiController {
     @SendsResponse()
     @HttpPost('/add')
     add(body) {
-        const images = [];
-        body.img.forEach((image, index) => {
-            if (index < this.LIMIT_IMAGES) {
-                const name = new Date().getTime() + '_' + body.img[index].name;
-                images.push(name);
-                fs.writeFileSync("public/images/" + name, body.img[index].result, 'base64');
-            }
-        });
-        this.killersService.addProduct(this.request, body, images).subscribe((result) => {
+        this.killersService.addKiller(this.request, body).subscribe((result) => {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
                 if (error == 666) {
-                    this.response.status(HttpStatusCode.forbidden).json('Brak sessji');
+                    this.response.status(HttpStatusCode.forbidden).json('Brak sesji');
                 } else {
                     this.response.status(HttpStatusCode.notFound).json(null);
                 }
@@ -92,10 +83,11 @@ export class KillersController extends ApiController {
     @SendsResponse()
     @HttpPut('/edit/:id')
     edit(body, id) {
-        this.killersService.editProduct(this.request, body, id).subscribe((result) => {
+        this.killersService.editKiller(this.request, body, id).subscribe((result) => {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
+            console.log(error)
                 if (error == 666) {
                     this.response.status(HttpStatusCode.forbidden).json('Brak sessji');
                 } else {
@@ -105,9 +97,9 @@ export class KillersController extends ApiController {
     }
 
     @SendsResponse()
-    @HttpDelete('/remove/:id/:userId')
-    remove(id, userId) {
-        this.killersService.removeProduct(this.request, id, userId).subscribe((result) => {
+    @HttpDelete('/remove/:id')
+    remove(id) {
+        this.killersService.removeKiller(this.request, id).subscribe((result) => {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {

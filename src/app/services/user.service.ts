@@ -68,6 +68,19 @@ export class UserService extends MainService {
         })
     }
 
+    logout(userData) {
+        return new Observable((observer) => {
+            database.get(`Select id, login, name, lastName, role, password From users WHERE login = '${userData.login}' AND id = ${userData.id};`, (err, data) => {
+                if (err != null)
+                    observer.error('NO_FOUND');
+                else {
+                    observer.next(!!data)
+                }
+                observer.complete();
+            });
+        })
+    }
+
     addSession(user) {
         return new Observable((observer) => {
             // dezaktywujemy aktywne sesje użytkownika
@@ -89,6 +102,24 @@ export class UserService extends MainService {
                         }
                         observer.complete();
                     });
+                } else {
+                    observer.error(err)
+                }
+            });
+        })
+    }
+
+    removeSession(user) {
+        return new Observable((observer) => {
+            // dezaktywujemy aktywne sesje użytkownika
+            const inactiveSession = `UPDATE sessions
+                                        SET 
+                                            active = false
+                                      WHERE userId = ${user.id}`;
+            database.run(inactiveSession, (err) => {
+                if (!err) {
+                    // dodajemy nową sesję
+                    observer.next(true);
                 } else {
                     observer.error(err)
                 }

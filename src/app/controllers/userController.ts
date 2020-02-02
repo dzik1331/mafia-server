@@ -62,6 +62,23 @@ export class UserController extends ApiController {
     }
 
     @SendsResponse()
+    @HttpPut('/logout')
+    logout(body: any) {
+        this.userService.logout(body).subscribe((result) => {
+            if (result) {
+                this.userService.removeSession(body).subscribe((data) => {
+                    this.response.status(HttpStatusCode.oK).json(null);
+                })
+            } else {
+                this.response.status(HttpStatusCode.notFound).json(null)
+            }
+        }, (error) => {
+            this.response.status(HttpStatusCode.notFound).json(error)
+        })
+        // return {result: {login: body.login, name: null, role: 'administrator'}};
+    }
+
+    @SendsResponse()
     @HttpGet('/roles')
     roles() {
         this.userService.getRolesQuery().subscribe((result) => {

@@ -51,25 +51,17 @@ export class KillersService extends MainService {
 
     }
 
-    addProduct(request, data, images) {
+    addKiller(request, data) {
         return new Observable((observer) => {
-            let sql = `INSERT INTO products (
-                         producer,
-                         description,
-                         img,
-                         tags,
-                         price,
-                         name,
-                         userId
+            let sql = `INSERT INTO killers (
+                         pseudonym,
+                         salary,
+                         location
                      )
                      VALUES (
-                         ${this.dataToString(data.producer) || null},
-                         ${this.dataToString(data.description) || null},
-                         ${this.dataToString(images.join(','))},
-                         ${this.dataToString(data.tags.join(',')) || null},
-                         ${data.price},
-                         ${this.dataToString(data.name)},
-                         ${data.userId}
+                         ${this.dataToString(data.pseudonym)},
+                         ${data.salary},
+                         ${this.dataToString(data.location)}
                      )`;
 
             this.checkSession(request).subscribe(
@@ -92,16 +84,13 @@ export class KillersService extends MainService {
         })
     }
 
-    editProduct(request, data, id) {
+    editKiller(request, data, id) {
         return new Observable((observer) => {
-            let sql = `UPDATE products
-                        SET name = ${this.dataToString(data.name)},
-                        price = ${data.price},
-                        tags = ${this.dataToString(data.tags.join(',')) || null},
-                        description = ${this.dataToString(data.description) || null},
-                        producer = ${this.dataToString(data.producer) || null}
-                    WHERE id = ${id} AND 
-                          userId = ${data.userId};`;
+            let sql = `UPDATE killers
+                        SET pseudonym = ${this.dataToString(data.pseudonym)},
+                        salary = ${data.salary},
+                        location = ${this.dataToString(data.location)}
+                    WHERE id = ${id};`;
 
             this.checkSession(request).subscribe(
                 (result) => {
@@ -123,28 +112,22 @@ export class KillersService extends MainService {
         })
     }
 
-    removeProduct(request, productId, userId) {
+    removeKiller(request, killerId) {
         return new Observable((observer) => {
-            let sql = `DELETE FROM products
-                        WHERE id = ${productId} AND  
-                              userId = ${userId};`;
+            let sql = `DELETE FROM killers
+                        WHERE id = ${killerId}`;
 
             this.checkSession(request).subscribe(
                 (result: any) => {
                     if (result) {
-                        if (result.userId == userId) {
-                            database.run(sql, (err) => {
-                                if (err) {
-                                    observer.error(err)
-                                } else {
-                                    observer.next('Deleted')
-                                }
-                                observer.complete();
-                            });
-                        } else {
-                            observer.error(777);
+                        database.run(sql, (err) => {
+                            if (err) {
+                                observer.error(err)
+                            } else {
+                                observer.next('Deleted')
+                            }
                             observer.complete();
-                        }
+                        });
                     } else {
                         this.sendSessionError(observer);
                     }

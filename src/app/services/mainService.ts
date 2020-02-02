@@ -12,26 +12,26 @@ export class MainService {
 
     checkSession(request) {
         return new Observable((observer) => {
-            observer.next(true);
-            observer.complete();
-            // const session = request.headers['user-session'];
-            // if (session == null || session == undefined || session == '') {
-            //     observer.next(false);
-            //     observer.complete();
-            //     return;
-            // }
-            // database.get(`Select session, userId, active From sessions WHERE session = '${session}'`, (err, data) => {
-            //     if (err != null)
-            //         observer.next(false);
-            //     else {
-            //         if (data) {
-            //             observer.next(data);
-            //         } else {
-            //             observer.next(false);
-            //         }
-            //     }
-            //     observer.complete();
-            // });
+            // observer.next(true);
+            // observer.complete();
+            const session = request.headers['user-session'];
+            if (session == null || session == undefined || session == '') {
+                observer.next(false);
+                observer.complete();
+                return;
+            }
+            database.get(`Select session, userId, active From sessions WHERE session = '${session}' AND active = 1`, (err, data) => {
+                if (err != null)
+                    observer.next(false);
+                else {
+                    if (data) {
+                        observer.next(data);
+                    } else {
+                        observer.next(false);
+                    }
+                }
+                observer.complete();
+            });
         })
     }
 
