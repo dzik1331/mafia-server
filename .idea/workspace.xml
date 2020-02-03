@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="537f8dbc-d9ae-428b-9315-a5b644ec7d1f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controllers/debtorsController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/debtorsController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controllers/killersController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/killersController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/debtors.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/debtors.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/killers.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/killers.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +111,7 @@
       <workItem from="1580145738398" duration="458000" />
       <workItem from="1580493499567" duration="5666000" />
       <workItem from="1580593453132" duration="4816000" />
-      <workItem from="1580715984335" duration="14077000" />
+      <workItem from="1580715984335" duration="14315000" />
     </task>
     <servers />
   </component>
@@ -158,6 +152,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="0" y="0" width="1506" height="717" maximized="true" key="dock-window-1/0.0.1680.1020/1680.0.1920.1050@1680.0.1920.1050" timestamp="1580735335115" />
+    <state x="0" y="67" width="1506" height="717" maximized="true" key="dock-window-2" timestamp="1580736451116">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="0" y="67" width="1506" height="717" maximized="true" key="dock-window-2/0.0.1680.1020/1680.0.1920.1050@1680.0.1920.1050" timestamp="1580736451116" />
     <state x="2336" y="257" width="717" height="585" key="find.popup" timestamp="1580729650747">
       <screen x="1680" y="0" width="1920" height="1050" />
     </state>
