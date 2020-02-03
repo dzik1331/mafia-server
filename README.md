@@ -2,25 +2,25 @@
 ********************************
 [Dłużnicy](#dłużnicy)
 
-[Dłużnik Dodaj](#dłużnik Dodaj)
+[Dłużnik Dodaj](#dłużnikDodaj)
 
-[Dłużnik Edytuj](#dłużnik Edytuj)
+[Dłużnik Edytuj](#dłużnikEdytuj)
 
-[Dłużnik Usuń](#dłużnik Usuń)
+[Dłużnik Usuń](#dłużnikUsuń)
 
-[Dłużnik Anuluj Zlecenie](#dłużnik Anuluj Zlecenie)
+[Dłużnik Anuluj Zlecenie](#dłużnikAnulujZlecenie)
 
 [Zabójcy](#zabójcy)
 
-[Zabójca Dodaj](#zabójca Dodaj)
+[Zabójca Dodaj](#zabójcaDodaj)
 
-[Zabójca Edytuj](#zabójca Edytuj)
+[Zabójca Edytuj](#zabójcaEdytuj)
 
-[Zabójca Usuń](#zabójca Usuń)
+[Zabójca Usuń](#zabójcaUsuń)
 
-[Zabójca Ustaw Cel](#zabójca Ustaw Cel)
+[Zabójca Ustaw Cel](#zabójcaUstawCel)
 
-[Zabójca Anuluj Zlecenie](#zabójca Anuluj Zlecenie)
+[Zabójca Anuluj Zlecenie](#zabójcaAnulujZlecenie)
 
 
 ## **Dłużnicy**
