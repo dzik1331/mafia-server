@@ -22,7 +22,14 @@ export class DebtorsController extends ApiController {
     @SendsResponse()
     @HttpGet('/list')
     products() {
-        this.debtorsService.getAll(this.request).subscribe((result) => {
+        this.debtorsService.getAll(this.request).subscribe((result: any) => {
+                if (Array.isArray(result)) {
+                    result = result.map((r) => {
+                        r['isTarget'] = !!r.killerId;
+                        delete r.killerId;
+                        return r;
+                    });
+                }
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
@@ -68,15 +75,7 @@ export class DebtorsController extends ApiController {
     @SendsResponse()
     @HttpPost('/add')
     add(body) {
-        const images = [];
-        body.img.forEach((image, index) => {
-            if (index < this.LIMIT_IMAGES) {
-                const name = new Date().getTime() + '_' + body.img[index].name;
-                images.push(name);
-                fs.writeFileSync("public/images/" + name, body.img[index].result, 'base64');
-            }
-        });
-        this.debtorsService.addProduct(this.request, body, images).subscribe((result) => {
+        this.debtorsService.addDebtor(this.request, body).subscribe((result) => {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
@@ -91,7 +90,7 @@ export class DebtorsController extends ApiController {
     @SendsResponse()
     @HttpPut('/edit/:id')
     edit(body, id) {
-        this.debtorsService.editProduct(this.request, body, id).subscribe((result) => {
+        this.debtorsService.editDebtor(this.request, body, id).subscribe((result) => {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
@@ -104,9 +103,24 @@ export class DebtorsController extends ApiController {
     }
 
     @SendsResponse()
-    @HttpDelete('/remove/:id/:userId')
-    remove(id, userId) {
-        this.debtorsService.removeProduct(this.request, id, userId).subscribe((result) => {
+    @HttpDelete('/remove/:id')
+    remove(id) {
+        this.debtorsService.removeDebtor(this.request, id).subscribe((result) => {
+                this.response.status(HttpStatusCode.oK).json(result)
+            },
+            (error) => {
+                if (error == 666) {
+                    this.response.status(HttpStatusCode.forbidden).json('Brak sessji');
+                } else {
+                    this.response.status(HttpStatusCode.notFound).json(null);
+                }
+            })
+    }
+
+    @SendsResponse()
+    @HttpDelete('/cancel-task/:id')
+    cancelTask(id) {
+        this.debtorsService.cancelTask(this.request, id).subscribe((result) => {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {

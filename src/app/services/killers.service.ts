@@ -8,7 +8,7 @@ export class KillersService extends MainService {
 
     getAll(request) {
 
-        let sql = "SELECT id, pseudonym, location, salary FROM killers;";
+        let sql = "SELECT killers.id, killers.pseudonym, killers.location, killers.salary, targets.targetId FROM killers LEFT JOIN targets ON killers.id = targets.killerId;";
 
         return new Observable((observer) => {
             this.checkSession(request).subscribe((result) => {
@@ -63,7 +63,38 @@ export class KillersService extends MainService {
                          ${data.salary},
                          ${this.dataToString(data.location)}
                      )`;
+            this.checkSession(request).subscribe(
+                (result) => {
+                    if (result) {
+                        database.run(sql, (err) => {
+                            if (err) {
+                                observer.error(err)
+                            } else {
+                                observer.next('Added')
+                            }
+                            observer.complete();
+                        });
+                    } else {
+                        this.sendSessionError(observer);
+                    }
+                }
+            )
 
+        })
+    }
+
+    setTarget(request, data) {
+        return new Observable((observer) => {
+            let sql = `INSERT INTO targets (
+                         killerId,
+                         targetId,
+                         typeId
+                     )
+                     VALUES (
+                         ${data.killerId},
+                         ${data.targetId},
+                         1
+                     )`;
             this.checkSession(request).subscribe(
                 (result) => {
                     if (result) {
@@ -112,10 +143,11 @@ export class KillersService extends MainService {
         })
     }
 
-    removeKiller(request, killerId) {
+    removeTarget(request, killerId) {
         return new Observable((observer) => {
-            let sql = `DELETE FROM killers
-                        WHERE id = ${killerId}`;
+            let sql = `DELETE FROM targets
+                        WHERE killerId = ${killerId}`;
+
 
             this.checkSession(request).subscribe(
                 (result: any) => {
@@ -125,6 +157,35 @@ export class KillersService extends MainService {
                                 observer.error(err)
                             } else {
                                 observer.next('Deleted')
+                            }
+                            observer.complete();
+                        });
+                    } else {
+                        this.sendSessionError(observer);
+                    }
+                }
+            )
+
+        })
+    }
+
+    removeKiller(request, killerId) {
+        return new Observable((observer) => {
+            let sql = `DELETE FROM killers
+                        WHERE id = ${killerId}`;
+            let sql2 = `DELETE FROM targets
+                        WHERE killerId = ${killerId}`;
+
+            this.checkSession(request).subscribe(
+                (result: any) => {
+                    if (result) {
+                        database.run(sql, (err) => {
+                            if (err) {
+                                observer.error(err)
+                            } else {
+                                observer.next('Deleted')
+                                database.run(sql2, () => {
+                                });
                             }
                             observer.complete();
                         });

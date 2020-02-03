@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="537f8dbc-d9ae-428b-9315-a5b644ec7d1f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/controllers/debtorsController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/debtorsController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/controllers/killersController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/killersController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controllers/userController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controllers/userController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/debtors.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/debtors.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/services/killers.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/killers.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/mainService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/mainService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mafia-gui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -117,6 +117,7 @@
       <workItem from="1580145738398" duration="458000" />
       <workItem from="1580493499567" duration="5666000" />
       <workItem from="1580593453132" duration="4816000" />
+      <workItem from="1580715984335" duration="14077000" />
     </task>
     <servers />
   </component>
@@ -153,10 +154,15 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="284" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1578850734384" />
-    <state x="2576" y="257" width="717" height="585" key="find.popup" timestamp="1580573049911">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="0" y="0" width="1506" height="717" maximized="true" key="dock-window-1" timestamp="1580735335115">
+      <screen x="0" y="0" width="1680" height="1020" />
+    </state>
+    <state x="0" y="0" width="1506" height="717" maximized="true" key="dock-window-1/0.0.1680.1020/1680.0.1920.1050@1680.0.1920.1050" timestamp="1580735335115" />
+    <state x="2336" y="257" width="717" height="585" key="find.popup" timestamp="1580729650747">
+      <screen x="1680" y="0" width="1920" height="1050" />
     </state>
     <state x="574" y="250" width="627" height="568" key="find.popup/0.0.1680.1020/1680.0.1920.1050@0.0.1680.1020" timestamp="1579096071299" />
+    <state x="2336" y="257" width="717" height="585" key="find.popup/0.0.1680.1020/1680.0.1920.1050@1680.0.1920.1050" timestamp="1580729650747" />
     <state x="656" y="257" width="607" height="536" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1579039894058" />
     <state x="2576" y="257" width="717" height="585" key="find.popup/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1580573049911" />
   </component>

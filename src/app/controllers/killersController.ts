@@ -72,8 +72,39 @@ export class KillersController extends ApiController {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
+            console.log(error)
                 if (error == 666) {
                     this.response.status(HttpStatusCode.forbidden).json('Brak sesji');
+                } else {
+                    this.response.status(HttpStatusCode.notFound).json(error);
+                }
+            })
+    }
+
+    @SendsResponse()
+    @HttpPost('/set-target')
+    setTarget(body) {
+        this.killersService.setTarget(this.request, body).subscribe((result) => {
+                this.response.status(HttpStatusCode.oK).json(result)
+            },
+            (error) => {
+                if (error == 666) {
+                    this.response.status(HttpStatusCode.forbidden).json('Brak sesji');
+                } else {
+                    this.response.status(HttpStatusCode.notFound).json(null);
+                }
+            })
+    }
+
+    @SendsResponse()
+    @HttpDelete('/cancel-target/:id')
+    removeTarget(id) {
+        this.killersService.removeTarget(this.request, id).subscribe((result) => {
+                this.response.status(HttpStatusCode.oK).json(result)
+            },
+            (error) => {
+                if (error == 666) {
+                    this.response.status(HttpStatusCode.forbidden).json('Brak sessji');
                 } else {
                     this.response.status(HttpStatusCode.notFound).json(null);
                 }
@@ -87,7 +118,6 @@ export class KillersController extends ApiController {
                 this.response.status(HttpStatusCode.oK).json(result)
             },
             (error) => {
-            console.log(error)
                 if (error == 666) {
                     this.response.status(HttpStatusCode.forbidden).json('Brak sessji');
                 } else {

@@ -8,7 +8,7 @@ export class DebtorsService extends MainService {
 
     getAll(request) {
 
-        let sql = "SELECT id, name, lastname, age, debt, location FROM debtors;";
+        let sql = "SELECT debtors.id, debtors.name, debtors.lastname, debtors.location, debtors.debt, debtors.age, targets.killerId FROM debtors LEFT JOIN targets ON  debtors.id = targets.targetId GROUP BY debtors.id;";
 
         return new Observable((observer) => {
             this.checkSession(request).subscribe((result) => {
@@ -51,25 +51,21 @@ export class DebtorsService extends MainService {
 
     }
 
-    addProduct(request, data, images) {
+    addDebtor(request, data) {
         return new Observable((observer) => {
-            let sql = `INSERT INTO products (
-                         producer,
-                         description,
-                         img,
-                         tags,
-                         price,
+            let sql = `INSERT INTO debtors (
                          name,
-                         userId
+                         lastname,
+                         age,
+                         debt,
+                         location
                      )
                      VALUES (
-                         ${this.dataToString(data.producer) || null},
-                         ${this.dataToString(data.description) || null},
-                         ${this.dataToString(images.join(','))},
-                         ${this.dataToString(data.tags.join(',')) || null},
-                         ${data.price},
                          ${this.dataToString(data.name)},
-                         ${data.userId}
+                         ${this.dataToString(data.lastname)},
+                         ${data.age},
+                         ${data.debt},
+                         ${this.dataToString(data.location)}
                      )`;
 
             this.checkSession(request).subscribe(
@@ -92,16 +88,15 @@ export class DebtorsService extends MainService {
         })
     }
 
-    editProduct(request, data, id) {
+    editDebtor(request, data, id) {
         return new Observable((observer) => {
-            let sql = `UPDATE products
+            let sql = `UPDATE debtors
                         SET name = ${this.dataToString(data.name)},
-                        price = ${data.price},
-                        tags = ${this.dataToString(data.tags.join(',')) || null},
-                        description = ${this.dataToString(data.description) || null},
-                        producer = ${this.dataToString(data.producer) || null}
-                    WHERE id = ${id} AND 
-                          userId = ${data.userId};`;
+                        age = ${data.age},
+                        debt = ${data.debt},
+                        lastname = ${this.dataToString(data.lastname)},
+                        location = ${this.dataToString(data.location)}
+                    WHERE id = ${id};`;
 
             this.checkSession(request).subscribe(
                 (result) => {
@@ -123,16 +118,14 @@ export class DebtorsService extends MainService {
         })
     }
 
-    removeProduct(request, productId, userId) {
+    removeDebtor(request, id) {
         return new Observable((observer) => {
-            let sql = `DELETE FROM products
-                        WHERE id = ${productId} AND  
-                              userId = ${userId};`;
+            let sql = `DELETE FROM debtors
+                        WHERE id = ${id};`;
 
             this.checkSession(request).subscribe(
                 (result: any) => {
                     if (result) {
-                        if (result.userId == userId) {
                             database.run(sql, (err) => {
                                 if (err) {
                                     observer.error(err)
@@ -141,10 +134,31 @@ export class DebtorsService extends MainService {
                                 }
                                 observer.complete();
                             });
-                        } else {
-                            observer.error(777);
-                            observer.complete();
-                        }
+                    } else {
+                        this.sendSessionError(observer);
+                    }
+                }
+            )
+
+        })
+    }
+
+    cancelTask(request, id) {
+        return new Observable((observer) => {
+            let sql = `DELETE FROM targets
+                        WHERE targetId = ${id};`;
+
+            this.checkSession(request).subscribe(
+                (result: any) => {
+                    if (result) {
+                            database.run(sql, (err) => {
+                                if (err) {
+                                    observer.error(err)
+                                } else {
+                                    observer.next('Deleted')
+                                }
+                                observer.complete();
+                            });
                     } else {
                         this.sendSessionError(observer);
                     }
