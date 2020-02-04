@@ -4,6 +4,7 @@
     <list default="true" id="537f8dbc-d9ae-428b-9315-a5b644ec7d1f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mafia-gui" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -112,7 +113,8 @@
       <workItem from="1580145738398" duration="458000" />
       <workItem from="1580493499567" duration="5666000" />
       <workItem from="1580593453132" duration="4816000" />
-      <workItem from="1580715984335" duration="14587000" />
+      <workItem from="1580715984335" duration="15567000" />
+      <workItem from="1580798269874" duration="1293000" />
     </task>
     <servers />
   </component>
@@ -128,9 +130,10 @@
     </state>
     <state x="636" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1020/1680.0.1920.1050@0.0.1680.1020" timestamp="1579069193801" />
     <state x="727" y="329" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1578845889311" />
-    <state x="2660" y="281" key="FileChooserDialogImpl" timestamp="1580593718409">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="2420" y="281" key="FileChooserDialogImpl" timestamp="1580798304718">
+      <screen x="1680" y="0" width="1920" height="1050" />
     </state>
+    <state x="2420" y="281" key="FileChooserDialogImpl/0.0.1680.1020/1680.0.1920.1050@1680.0.1920.1050" timestamp="1580798304718" />
     <state x="740" y="281" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1580146193480" />
     <state x="2660" y="281" key="FileChooserDialogImpl/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1580593718409" />
     <state width="1899" height="284" key="GridCell.Tab.0.bottom" timestamp="1578850734384">
@@ -153,10 +156,10 @@
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
     <state x="0" y="0" width="1506" height="717" maximized="true" key="dock-window-1/0.0.1680.1020/1680.0.1920.1050@1680.0.1920.1050" timestamp="1580735335115" />
-    <state x="0" y="67" width="1506" height="717" maximized="true" key="dock-window-2" timestamp="1580736451116">
+    <state x="0" y="67" width="1506" height="717" maximized="true" key="dock-window-2" timestamp="1580799565726">
       <screen x="0" y="0" width="1680" height="1020" />
     </state>
-    <state x="0" y="67" width="1506" height="717" maximized="true" key="dock-window-2/0.0.1680.1020/1680.0.1920.1050@1680.0.1920.1050" timestamp="1580736451116" />
+    <state x="0" y="67" width="1506" height="717" maximized="true" key="dock-window-2/0.0.1680.1020/1680.0.1920.1050@1680.0.1920.1050" timestamp="1580799565726" />
     <state x="2336" y="257" width="717" height="585" key="find.popup" timestamp="1580729650747">
       <screen x="1680" y="0" width="1920" height="1050" />
     </state>

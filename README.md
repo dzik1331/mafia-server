@@ -22,6 +22,14 @@
 
 [Zabójca Anuluj Zlecenie](#zabójca-anuluj-zlecenie)
 
+[Użytkownik Login](#użytkownik-login)
+
+[Użytkownik Logout](#użytkownik-logout)
+
+[Dashboard](#dashboard)
+
+[Dashboard Zapisz](#dashboard-zapisz)
+
 
 ## **Dłużnicy**
 
@@ -195,3 +203,75 @@ Odpowiedź:
     Deleted
 
 *******************************
+## **Użytkownik Login**
+
+`/api/user/login [POST]`
+    
+Odpowiedź:
+
+##### Status: 200
+    Added
+
+##### Wysyłamy
+    {
+        "login":"boss",
+        "password": 'passw'
+    }
+    
+*******************************
+## **Użytkownik Logout**
+
+`/api/user/logout [PUT]`
+    
+Odpowiedź:
+
+##### Status: 200
+    Added
+
+##### Wysyłamy
+    {
+        "login":"boss",
+        "id": 1
+    }
+*******************************
+## **Dashboard**
+
+`/api/dashboard/get/:id [GET]`
+##### id = id użytkownika
+    
+Odpowiedź:
+
+##### Status: 200
+    {
+       "widgets":"[{\"position\":{\"top\":59,\"left\":57,\"width\":44,\"height\":42},\"type\":0,\"options\":{\"title\":\"Dłużnicy\"}},{\"position\":{\"top\":59,\"left\":1,\"width\":56,\"height\":42},\"type\":1,\"options\":{\"title\":\"Zabójcy\"}},{\"position\":{\"top\":1,\"left\":1,\"width\":100,\"height\":58},\"type\":2,\"options\":{\"title\":\"Mapa\"}}]"
+    }
+    
+    W wyniku zwracany jest obiekt zawierający pole widgets w który znajduje się string który po przeparsowaniu na JSON zawiera tablicę
+    z obiektami widgetów
+    
+    {
+        position: {top: 10, left: 10, width: 100, height: 50},
+        type: 0, 1 lub 2,
+        options: {title: 'Dłużnicy'}
+    }
+    
+    
+      debtor = 0;
+      killers = 1;
+      map = 2;
+*******************************
+## **Dashboard Zapisz**
+
+`/api/dashboard/add [POST]`
+    
+Odpowiedź:
+
+##### Status: 200
+    Added
+
+##### Wysyłamy
+    w polu widgets przesyłamy to samo co otrzymaliśmy z serwera pobierając widget
+    {
+        "userId":1,
+        "widgets":"[{\"position\":{\"top\":59,\"left\":57,\"width\":44,\"height\":42},\"type\":0,\"options\":{\"title\":\"Dłużnicy\"}},{\"position\":{\"top\":59,\"left\":1,\"width\":56,\"height\":42},\"type\":1,\"options\":{\"title\":\"Zabójcy\"}},{\"position\":{\"top\":1,\"left\":1,\"width\":100,\"height\":58},\"type\":2,\"options\":{\"title\":\"Mapa\"}}]"
+    }
