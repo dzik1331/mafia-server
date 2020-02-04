@@ -270,7 +270,7 @@ Odpowiedź:
     Added
 
 ##### Wysyłamy
-    w polu widgets przesyłamy to samo co otrzymaliśmy z serwera pobierając widget
+    w polu widgets przesyłamy to samo co otrzymaliśmy z serwera pobierając dashboard
     {
         "userId":1,
         "widgets":"[{\"position\":{\"top\":59,\"left\":57,\"width\":44,\"height\":42},\"type\":0,\"options\":{\"title\":\"Dłużnicy\"}},{\"position\":{\"top\":59,\"left\":1,\"width\":56,\"height\":42},\"type\":1,\"options\":{\"title\":\"Zabójcy\"}},{\"position\":{\"top\":1,\"left\":1,\"width\":100,\"height\":58},\"type\":2,\"options\":{\"title\":\"Mapa\"}}]"
